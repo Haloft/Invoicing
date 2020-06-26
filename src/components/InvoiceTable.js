@@ -18,7 +18,7 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import InvoiceRowForm from './InvoiceRowForm'
+import InvoiceFormDialog from './InvoiceFormDialog'
 import { delInvoice } from '../actions'
 
 const useRowStyles = makeStyles({
@@ -57,7 +57,7 @@ function Row({ invoice }) {
                 <TableCell align="right">{invoice.due_date}</TableCell>
                 <TableCell align="right">{roundToTwo(invoice.rows.map(row => row.quantity * row.unit_price).reduce((a, b) => a + b))}</TableCell>
                 <TableCell align="right">
-                    <InvoiceRowForm style={{ color: 'green' }} id={invoice.id} isEdit={true} label={<EditOutlinedIcon />} />
+                    <InvoiceFormDialog style={{ color: 'green' }} id={invoice.id} isEdit={true} label={<EditOutlinedIcon />} />
                     <Button onClick={() => dispatch(delInvoice(invoice.id))}><DeleteOutlineIcon style={{ color: "red" }} /></Button>
                 </TableCell>
             </TableRow>

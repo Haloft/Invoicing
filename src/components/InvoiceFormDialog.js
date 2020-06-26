@@ -7,7 +7,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import InvoiceForm from './InvoiceForm'
 
-export default function InvoiceRowForm(props) {
+export default function InvoiceFormDialog(props) {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
@@ -23,8 +23,13 @@ export default function InvoiceRowForm(props) {
             <Button style={props.style} variant={props.vrnt} color={props.color} onClick={handleClickOpen}>
                 {props.label}{props.title}
             </Button>
-            <Dialog maxWidth={false} open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">New Invoice</DialogTitle>
+            <Dialog maxWidth={false} fullWidth={true} open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+                {props.isEdit ? 
+                    <DialogTitle id="form-dialog-title">Edit Invoice</DialogTitle> :
+                    <DialogTitle id="form-dialog-title">New Invoice</DialogTitle>
+
+
+                }
                 <DialogContent>
                     {props.isEdit ?
                         <InvoiceForm handleClose={handleClose} new={false} id={props.id} /> :

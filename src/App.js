@@ -1,12 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux'
 import AddIcon from '@material-ui/icons/Add';
-//import { initializeNotes } from './reducers/invoiceReducer'
+//import { initInvoices } from './actions/
 
 import InvoiceTable from "./components/InvoiceTable";
-import InvoiceRowForm from './components/InvoiceRowForm';
 import HeaderRow from './components/HeaderRow'
 import HeaderBar from './components/HeaderBar'
+import InvoiceFormDialog from './components/InvoiceFormDialog';
 
 
 
@@ -44,7 +44,7 @@ function App() {
         <HeaderRow title="Total Receivables" value={total} mark='€' />
       </div>
       <InvoiceTable />
-      <InvoiceRowForm label={<AddIcon />} title="New Invoice" vrnt="contained" color="primary" style={{ float: 'right', marginRight: '12.5%' }} />
+      <InvoiceFormDialog label={<AddIcon />} title="New Invoice" vrnt="contained" color="primary" style={{ float: 'right', marginRight: '12.5%' }} />
 
     </>
   );

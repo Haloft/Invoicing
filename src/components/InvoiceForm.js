@@ -59,14 +59,14 @@ const InvoiceForm = (props) => {
                             <Form>
                                 <div>
                                     <Field
-                                        style={{ marginRight: '2%' }}
+                                        style={{ marginRight: '1.5%' }}
                                         component={TextField}
                                         name='name'
                                         label="Customer"
                                         as='input'
                                     />
                                     <Field
-                                        style={{ marginRight: '2%' }}
+                                        style={{ marginRight: '1.5%' }}
                                         component={TextField}
                                         label="Street Address"
                                         name='street'
@@ -81,7 +81,7 @@ const InvoiceForm = (props) => {
                                 </div>
                                 <div>
                                     <Field
-                                        style={{ marginRight: '2%' }}
+                                        style={{ marginRight: '1.5%' }}
                                         component={TextField}
                                         label="City"
                                         name='city'
@@ -95,6 +95,7 @@ const InvoiceForm = (props) => {
                                         as='input'
                                     />
                                 </div>
+                                <h4>Product Rows</h4>
                                 <FieldArray name="rows">
                                     {arrayHelpers => (
                                         <div>
@@ -107,46 +108,53 @@ const InvoiceForm = (props) => {
                                                 const vat = `rows.${index}.vat`
                                                 return (
                                                     <div key={index}>
-                                                        <Field
-                                                            style={{ marginRight: '2%' }}
-                                                            component={TextField}
-                                                            label="Item"
-                                                            name={name}
-                                                            as='input'
-                                                        />
-                                                        <Field
-                                                            style={{ marginRight: '2%' }}
-                                                            component={TextField}
-                                                            label="Quantity"
-                                                            type="number"
-                                                            name={quantity}
-                                                            as='input'
-                                                        /> <Field
-                                                            component={TextField}
-                                                            label="Unit of measurement"
-                                                            name={unit_of_measurement}
-                                                            as='input'
-                                                        /> <Field
-                                                            style={{ marginRight: '2%' }}
-                                                            component={TextField}
-                                                            type="number"
-                                                            label="Unit Price"
-                                                            name={unit_price}
-                                                            as='input'
-                                                        /> <Field
-                                                            style={{ marginRight: '2%' }}
-                                                            component={TextField}
-                                                            label="Currency"
-                                                            name={currency}
-                                                            as='input'
-                                                        /> <Field
-                                                            component={TextField}
-                                                            type="number"
-                                                            label="Vat"
-                                                            name={vat}
-                                                            as='input'
-                                                        />
-                                                        <Button type="button" onClick={() => arrayHelpers.remove(index)}><DeleteOutlineIcon style={{ color: "red" }} /></Button>
+                                                        <div>
+                                                            <Field
+                                                                style={{ marginRight: '1.5%' }}
+                                                                component={TextField}
+                                                                label="Item"
+                                                                name={name}
+                                                                as='input'
+                                                            />
+                                                            <Field
+                                                                style={{ marginRight: '1.5%' }}
+                                                                component={TextField}
+                                                                label="Quantity"
+                                                                type="number"
+                                                                name={quantity}
+                                                                as='input'
+                                                            /> <Field
+                                                                component={TextField}
+                                                                label="Unit of measurement"
+                                                                name={unit_of_measurement}
+                                                                as='input'
+
+                                                            />
+                                                        </div>
+                                                        <div>
+                                                            <Field
+                                                                style={{ marginRight: '1.5%' }}
+                                                                component={TextField}
+                                                                type="number"
+                                                                label="Unit Price"
+                                                                name={unit_price}
+                                                                as='input'
+                                                            /> <Field
+                                                                style={{ marginRight: '1.5%' }}
+                                                                component={TextField}
+                                                                label="Currency"
+                                                                name={currency}
+                                                                as='input'
+                                                            /> <Field
+                                                                component={TextField}
+                                                                type="number"
+                                                                label="Vat"
+                                                                name={vat}
+                                                                as='input'
+                                                            />
+                                                            <DeleteOutlineIcon onClick={() => arrayHelpers.remove(index)} style={{ color: "red" }} />
+
+                                                        </div>
                                                     </div>
                                                 );
                                             })}
@@ -231,6 +239,7 @@ const InvoiceForm = (props) => {
                                         as='input'
                                     />
                                 </div>
+                                <h4>Product Rows</h4>
                                 <FieldArray name="rows">
                                     {arrayHelpers => (
                                         <div>
@@ -243,46 +252,52 @@ const InvoiceForm = (props) => {
                                                 const vat = `rows.${index}.vat`
                                                 return (
                                                     <div key={index}>
-                                                        <Field
-                                                            style={{ marginRight: '2%' }}
-                                                            component={TextField}
-                                                            label="Item"
-                                                            name={name}
-                                                            as='input'
-                                                        />
-                                                        <Field
-                                                            style={{ marginRight: '2%' }}
-                                                            component={TextField}
-                                                            label="Quantity"
-                                                            type="number"
-                                                            name={quantity}
-                                                            as='input'
-                                                        /> <Field
-                                                            component={TextField}
-                                                            label="Unit of measurement"
-                                                            name={unit_of_measurement}
-                                                            as='input'
-                                                        /> <Field
-                                                            style={{ marginRight: '2%' }}
-                                                            component={TextField}
-                                                            type="number"
-                                                            label="Unit Price"
-                                                            name={unit_price}
-                                                            as='input'
-                                                        /> <Field
-                                                            style={{ marginRight: '2%' }}
-                                                            component={TextField}
-                                                            label="Currency"
-                                                            name={currency}
-                                                            as='input'
-                                                        /> <Field
-                                                            component={TextField}
-                                                            type="number"
-                                                            label="Vat"
-                                                            name={vat}
-                                                            as='input'
-                                                        />
-                                                        <Button type="button" onClick={() => arrayHelpers.remove(index)}><DeleteOutlineIcon style={{ color: "red" }} /></Button>
+                                                        <div>
+                                                            <Field
+                                                                style={{ marginRight: '2%' }}
+                                                                component={TextField}
+                                                                label="Item"
+                                                                name={name}
+                                                                as='input'
+                                                            />
+                                                            <Field
+                                                                style={{ marginRight: '2%' }}
+                                                                component={TextField}
+                                                                label="Quantity"
+                                                                type="number"
+                                                                name={quantity}
+                                                                as='input'
+                                                            /> <Field
+                                                                component={TextField}
+                                                                label="Unit of measurement"
+                                                                name={unit_of_measurement}
+                                                                as='input'
+                                                            />
+                                                        </div>
+                                                        <div>
+                                                            <Field
+                                                                style={{ marginRight: '2%' }}
+                                                                component={TextField}
+                                                                type="number"
+                                                                label="Unit Price"
+                                                                name={unit_price}
+                                                                as='input'
+                                                            /> <Field
+                                                                style={{ marginRight: '2%' }}
+                                                                component={TextField}
+                                                                label="Currency"
+                                                                name={currency}
+                                                                as='input'
+                                                            /> <Field
+                                                                component={TextField}
+                                                                type="number"
+                                                                label="Vat"
+                                                                name={vat}
+                                                                as='input'
+                                                            />
+                                                            <DeleteOutlineIcon onClick={() => arrayHelpers.remove(index)} style={{ color: "red" }} />
+
+                                                        </div>
                                                     </div>
                                                 );
                                             })}
