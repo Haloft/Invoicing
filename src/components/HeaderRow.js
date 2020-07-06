@@ -11,16 +11,6 @@ const useStyles = makeStyles({
         marginBottom: '0.1%',
         justifyContent: 'center',
     },
-
-    title: {
-        
-
-   
-    },
-    pos: {
-        marginBottom: 12,
-    },
-
 });
 
 export default function HeaderRow(props) {

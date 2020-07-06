@@ -26,6 +26,9 @@ const useRowStyles = makeStyles({
         '& > *': {
             borderBottom: 'unset',
         },
+        table: {
+            minWidth: 340,
+        }
     },
 });
 
@@ -38,11 +41,13 @@ function Row({ invoice }) {
     const [open, setOpen] = React.useState(false);
     const classes = useRowStyles();
 
+    
+
     return (
 
         <>
             <TableRow className={classes.root}>
-                <TableCell>
+                <TableCell className={classes.table}>
                     <IconButton aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
                         {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                     </IconButton>
@@ -67,7 +72,7 @@ function Row({ invoice }) {
                         <Box margin={1}>
                             <Typography variant="h6" gutterBottom component="div">
                                 Product Rows
-              </Typography>
+                            </Typography>
                             <Table size="small" aria-label="purchases">
                                 <TableHead align="right">
                                     <TableRow>
@@ -97,7 +102,8 @@ function Row({ invoice }) {
                 </TableCell>
             </TableRow>
         </>
-    );
+        );
+    
 }
 
 

@@ -16,7 +16,6 @@ function App() {
   const invoices = useSelector(state => state);
   const price = invoices.map(invoice => invoice.rows.map(r => r.quantity * r.unit_price));
   const prices = price.flat()
-  const total = roundToTwo(prices.reduce((a, b) => a + b))
 
 
   /*
@@ -35,6 +34,18 @@ function App() {
 
 
   */
+  
+  if (invoices.length === 0) {
+    return (
+      <>
+      <h1 style={{textAlign: "center"}}> No invoices to show</h1>
+      <InvoiceFormDialog label={<AddIcon />} title="New Invoice" vrnt="contained" color="primary" style={{marginLeft: '45.5%'}} />
+      </>
+    )
+  }
+
+  const total = roundToTwo(prices.reduce((a, b) => a + b))
+
 
   return (
     <>

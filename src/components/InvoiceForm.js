@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, Form, Field, FieldArray } from 'formik';
+import { Formik, Form, Field, FieldArray} from 'formik';
 import { useSelector, useDispatch } from 'react-redux'
 import Button from '@material-ui/core/Button';
 import { newInvoice } from '../actions'
@@ -7,6 +7,29 @@ import { editInvoice } from '../actions'
 import { TextField } from 'formik-material-ui'
 import AddIcon from '@material-ui/icons/Add';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
+import * as Yup from 'yup';
+
+
+const InvoiceSchema = Yup.object().shape({
+    name: Yup.string()
+      .max(50, 'Too Long!')
+      .required('Required'),
+    street: Yup.string()
+      .max(50, 'Too Long!')
+      .required('Required'),
+    city: Yup.string()      
+        .required('Required'),
+    due_date: Yup.date()      
+        .required('Required'),
+    rows: Yup.array().of(Yup.object({
+        name: Yup.string()
+        .required('Required'),
+        quantity: Yup.number()
+            .required('Required'),
+        unit_price: Yup.number()
+        .required('Required')
+    }))
+  });
 
 
 
@@ -24,6 +47,8 @@ const InvoiceForm = (props) => {
         dispatch(newInvoice(values))
         props.handleClose();
     }
+
+  
     if (props.new) {
 
         return (
@@ -51,6 +76,7 @@ const InvoiceForm = (props) => {
                                 ]
                         }
                     }
+                    validationSchema={InvoiceSchema}
                     onSubmit={handleSubmit}
                 >
                     {props => {
@@ -131,6 +157,7 @@ const InvoiceForm = (props) => {
 
                                                             />
                                                         </div>
+
                                                         <div>
                                                             <Field
                                                                 style={{ marginRight: '1.5%' }}
@@ -152,9 +179,11 @@ const InvoiceForm = (props) => {
                                                                 name={vat}
                                                                 as='input'
                                                             />
-                                                            <DeleteOutlineIcon onClick={() => arrayHelpers.remove(index)} style={{ color: "red" }} />
+                                                        <DeleteOutlineIcon onClick={() => arrayHelpers.remove(index)} style={{ color: "red", marginLeft: '1%', marginTop: '3%'}} />
+                                                            
 
                                                         </div>
+
                                                     </div>
                                                 );
                                             })}
@@ -195,6 +224,7 @@ const InvoiceForm = (props) => {
                             rows: invoice.rows.map(row => ({ ...row })),
                         }
                     }
+                    validationSchema={InvoiceSchema}
                     onSubmit={handleEditSubmit}
                 >
                     {props => {
