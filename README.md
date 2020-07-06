@@ -29,7 +29,11 @@ to do stuff in a proper manner. Add in a thousand and one trials and errors with
 I prefer functional over iterative , and JS from ES6 to newer. I hope that is visible on my code. 
 
 I didn't focus on making the app responsive, nor did i bother about form validations or error handling. Heck, you can even screw the app 
-just by deleting both of the initial invoices. I didn't feel like that was the point of this Recruitment test. 
+just by deleting both of the initial invoices.
+
+*EDIT Added some basic form validations and error handling. Cant screw the app anymore just by deleting the initial invoices either :D END OF EDIT *
+
+ I didn't feel like that was the point of this Recruitment test. 
 
 I did do my best, and am kinda happy with the result. 
 
