@@ -1,68 +1,35 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+I started the project with creating the base with create react app, and
+installed all the dependencies like Redux, Formik, React-Redux, Material-Ui core
 
-In the project directory, you can run:
+Most of the technologies were quite new to me, so i had to spend some time with tutorials
+and documentations first. 
 
-### `npm start`
+First mission was to get the initial data rendered to a table. 
+I built a sketch version of the table with some hard coded values and
+slowly started setting up redux for state management. I realized the hooks offered
+by React-Redux were quite suitable for this project. Quite quickly i got the initial
+data visible on my very sketchy table, and it was time to up the game with some Material-Ui
+Goodies. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+When i got the table to look a bit easier for the eye, i started to plan the concept for
+the adding/editing invoices. For some reason, i couldn't think of any other way than a dialog 
+with Form fields. I kinda like the mobile app feeling that it brings. I set up the Material-ui Dialog
+and started learning Formik. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+I spent way too much time on the form part of the app. I am really glad that Formik offers the 
+FieldArray component, i am really not that glad of how late i found out that it exists. Also
+spent way too much time on getting the values to the action creator in a proper form. Afterwards
+i learned that i dont need to overcomplicate the action creator. 
 
-### `npm test`
+When the form was good and spitting the correct values to the action creator, it was time to fine tune the reducer
+to do stuff in a proper manner. Add in a thousand and one trials and errors with stylings and basically thats it. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I prefer functional over iterative , and JS from ES6 to newer. I hope that is visible on my code. 
 
-### `npm run build`
+I didn't focus on making the app responsive, nor did i bother about form validations or error handling. Heck, you can even screw the app 
+just by deleting both of the initial invoices. I didn't feel like that was the point of this Recruitment test. 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I did do my best, and am kinda happy with the result. 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
